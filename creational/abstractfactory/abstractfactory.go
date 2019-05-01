@@ -5,11 +5,6 @@ import (
 	"fmt"
 )
 
-type Vehicle interface {
-	NumWheels() int
-	NumSeats() int
-}
-
 const (
 	LuxuryCarType = 1
 	FamilyCarType = 2
