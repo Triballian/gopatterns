@@ -3,7 +3,7 @@ package prototype
 import "testing"
 
 func TestClone(t *testing.T) {
-	shirtCache := GetClone() //changed from GetShirtsCloner
+	shirtCache := GetShirtsCloner()
 	if shirtCache == nil {
 		t.Fatal("Received cache was nil")
 

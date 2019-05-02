@@ -15,11 +15,11 @@ const (
 	Blue  = 3
 )
 
-func GetShirtsCloner() ShirtCloner {
-	return nil
-}
-
 type ShirtsCache struct{}
+
+func GetShirtsCloner() ShirtCloner {
+	return new(ShirtsCache)
+}
 
 func (s *ShirtsCache) GetClone(m int) (ItemInfoGetter, error) {
 	switch m {
@@ -33,7 +33,7 @@ func (s *ShirtsCache) GetClone(m int) (ItemInfoGetter, error) {
 		newItem := *bluePrototype
 		return &newItem, nil
 	default:
-		return nil, errors.New("Shirt modle not recognized.")
+		return nil, errors.New("Shirt model not recognized")
 	}
 
 }
@@ -54,10 +54,6 @@ func (s *Shirt) GetInfo() string {
 	return fmt.Sprintf("Shirt with SKU '%s' and Color id %d that costs %f\n", s.SKU, s.Color, s.Price)
 }
 
-func (i *Shirt) GetPrice() float32 {
-	return i.Price
-}
-
 var whitePrototype *Shirt = &Shirt{
 	Price: 15.00,
 	SKU:   "empty",
@@ -74,4 +70,8 @@ var bluePrototype *Shirt = &Shirt{
 	Price: 17.00,
 	SKU:   "empty",
 	Color: Blue,
+}
+
+func (i *Shirt) GetPrice() float32 {
+	return i.Price
 }
