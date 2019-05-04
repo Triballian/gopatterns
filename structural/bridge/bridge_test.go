@@ -118,3 +118,4 @@ func TestPacktPrinter_Print(t *testing.T) {
 	if testWriter.Msg != expectedMessage {
 		t.Errorf("The expected message on the io.Writer doesn't match actual.\n  Actual: %s\nExpected: %s\n", testWriter.Msg, expectedMessage)
 	}
+}
