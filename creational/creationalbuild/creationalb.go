@@ -1,4 +1,4 @@
-package creationalb
+package creationalbuild
 
 // BuildProcess This interface defines the steps that are necessary to build a vehicle
 type BuildProcess interface {
@@ -69,12 +69,12 @@ func (b *BikeBuilder) GetVehicle() VehicleProduct {
 	return b.v
 }
 
-type BusBuilder sttruct {
+type BusBuilder struct {
 	v VehicleProduct
 }
 
 func (b *BusBuilder) SetWheels() BuildProcess {
-	b.v.Wheels = 4*2
+	b.v.Wheels = 4 * 2
 	return b
 }
 
@@ -90,5 +90,5 @@ func (b *BusBuilder) SetStructure() BuildProcess {
 
 func (b *BusBuilder) GetVehicle() VehicleProduct {
 	return b.v
-	
+
 }
