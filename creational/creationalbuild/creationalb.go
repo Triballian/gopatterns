@@ -1,4 +1,4 @@
-package creationalbuild
+package creationalb
 
 // BuildProcess This interface defines the steps that are necessary to build a vehicle
 type BuildProcess interface {
