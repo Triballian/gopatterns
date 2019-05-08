@@ -13,7 +13,7 @@ func TestGetIntance(t *testing.T) {
 
 	currentCount := counter1.AddOne()
 	if currentCount != 1 {
-		t.Errorf("After calling for the first time to count, the count must be i but it is %d", currentCount)
+		t.Errorf("After calling for the first time to count, the count must be 1 but it is %d", currentCount)
 	}
 	counter2 := GetInstance()
 	if counter2 != expectedCounter {
